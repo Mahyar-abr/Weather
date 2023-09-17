@@ -34,7 +34,7 @@ body {
   max-width: 1300px;
   width: 100%;
   align-content: center;
-  height: 700px;
+  height: 540px;
   display: block;
   padding: 5px;
   margin: auto;
@@ -56,18 +56,23 @@ body {
 .today,
 .day {
   max-width: 900px;
-  width: 85%;
+  width: 95%;
   justify-content: left;
   margin: auto;
   display: flex;
   position: relative;
-  font-size: 40px;
-  top: 35px;
+  font-size: 30px;
+  top: 50px;
 }
 
 .day {
   position: relative;
-  right: 20px;
+  right: 13px;
+}
+
+.today {
+  position: relative;
+  right: 5px;
 }
 
 .country,
@@ -80,7 +85,7 @@ body {
   margin: auto;
   display: flex;
   position: relative;
-  bottom: 80px;
+  bottom: 55px;
   font-size: 40px;
 }
 
@@ -99,16 +104,33 @@ body {
 .weather {
 }
 
-.left,.middle,.right {
+.left,
+.middle,
+.right {
+  /* padding: 50px; */
+  /* margin-bottom: 200px; */
+  /* margin-top: 5px; */
+  background-color: #662e9b;
   display: inline-block;
-  max-width: 420px;
-  width: 95%;
+  /* max-width: 250px; */
+  width: 50vh;
+  height: 250px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 25px;
 }
 
-@media screen and (max-width:950px) {
+.cards {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 120px;
+}
+
+@media screen and (max-width: 950px) {
   .country,
   .city,
   .weather {
@@ -119,46 +141,20 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    bottom: 65px;
+    bottom: 30px;
     font-size: 30px;
   }
 
   .today,
-.day {
-  max-width: 900px;
-  width: 85%;
-  justify-content: left;
-  margin: auto;
-  display: flex;
-  position: relative;
-  font-size: 40px;
-  top: 35px;
-}
-
-.degree {
-  max-width: 900px;
-  width: 95%;
-  justify-content: right;
-  /* align-items: ; */
-  margin: auto;
-  display: flex;
-  position: relative;
-  bottom: 200px;
-  font-size: 120px;
-}
-}
-
-@media screen and (max-width:760px) {
-  .today,
   .day {
     max-width: 900px;
-    width: 10%;
-    /* justify-content: left; */
+    width: 85%;
+    justify-content: left;
     margin: auto;
     display: flex;
     position: relative;
-    font-size: 30px;
-    top: 120px;
+    font-size: 25px;
+    top: 66px;
   }
 
   .degree {
@@ -169,13 +165,75 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    bottom: 120px;
-    font-size: 100px;
-    right: 10%;
+    bottom: 157px;
+    font-size: 120px;
+  }
+
+  .left,
+  .middle,
+  .right {
+    /* padding: 50px; */
+    /* margin-bottom: 200px; */
+    margin-top: 5px;
+    background-color: #662e9b;
+    display: inline-block;
+    /* max-width: 250px; */
+    width: 32vh;
+    height: 250px;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 85px;
+    flex-wrap: wrap;
+  }
+
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 85vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
   }
 }
 
-@media screen and (max-width:570px) {
+@media screen and (max-width: 835px) {
+  .today,
+  .day {
+    /* max-width: 900px; */
+    /* width: 10%; */
+    justify-content: left;
+    margin: auto;
+    display: block;
+    position: relative;
+    font-size: 30px;
+    top: 120px;
+  }
+
+  .degree {
+    /* max-width: 900px; */
+    /* width: 95%; */
+    text-align: right;
+    /* align-items: ; */
+    margin: auto;
+    display: flex;
+    position: relative;
+    bottom: 95px;
+    font-size: 100px;
+    /* left: 5%; */
+  }
+
   .country,
   .city,
   .weather {
@@ -186,31 +244,257 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    bottom: 35px;
+    bottom: 70px;
+    font-size: 30px;
+  }
+}
+
+/* Background responsive */
+@media screen and (max-width: 821px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 120vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .country,
+  .city,
+  .weather {
+    max-width: 800px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    position: relative;
+    bottom: 45px;
+    font-size: 25px;
+  }
+
+  .today,
+  .day {
+    max-width: 27px;
+    width: 15%;
+    justify-content: left;
+    margin: auto;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    top: 100px;
+  }
+
+  .degree {
+    /* max-width: 185px; */
+    /* width: 17%; */
+    justify-content: right;
+    /* align-items: ; */
+    margin: auto;
+    display: block;
+    position: relative;
+    /* top: 20px; */
+    left: 15px;
+    font-size: 60px;
+    bottom: 5px;
+    text-align: center;
+  }
+
+  .left,
+  .middle,
+  .right {
+    /* padding: 50px; */
+    /* margin-bottom: 200px; */
+    margin-top: 5px;
+    background-color: #662e9b;
+    display: inline-block;
+    /* max-width: 250px; */
+    width: 32vh;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 135vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .country,
+  .city,
+  .weather {
+    max-width: 800px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    position: relative;
+    /* bottom: 70px; */
     font-size: 15px;
   }
 
   .today,
-.day {
-  max-width: 27px;
-  width: 15%;
-  justify-content: left;
-  margin: auto;
-  display: flex;
-  position: relative;
-  font-size: 20px;
-  top: 75px;
+  .day {
+    max-width: 27px;
+    width: 15%;
+    justify-content: left;
+    margin: auto;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    top: 75px;
+  }
+
+  .degree {
+    /* max-width: 185px; */
+    /* width: 55%; */
+    justify-content: right;
+    /* align-items: ; */
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 15px;
+    font-size: 75px;
+    text-align: center;
+  }
+
+  .left,
+  .middle,
+  .right {
+    /* padding: 50px; */
+    /* margin-bottom: 200px; */
+    margin-top: 5px;
+    background-color: #662e9b;
+    display: inline-block;
+    /* max-width: 250px; */
+    width: 32vh;
+    height: 250px;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* bottom: 0px; */
+    top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 120vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
 }
 
-.degree {
-  max-width: 185px;
-  width: 55%;
-  justify-content: right;
-  /* align-items: ; */
-  margin: auto;
-  display: flex;
-  position: relative;
-  top: 15px;
-  font-size: 75px;
+/* Background responsive */
+@media screen and (max-width: 569px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 160vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
 }
+
+/* Background responsive */
+@media screen and (max-width: 373px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 164vh;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .country,
+  .city,
+  .weather {
+    max-width: 800px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    position: relative;
+    /* bottom: 70px; */
+    font-size: 15px;
+    /* top: -200px; */
+    /* bottom: ; */
+  }
+
+  .today,
+  .day {
+    max-width: 27px;
+    width: 15%;
+    justify-content: left;
+    margin: auto;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    top: 75px;
+  }
+
+  .degree {
+    /* max-width: 185px; */
+    /* width: 55%; */
+    /* justify-content: right; */
+    /* align-items: ; */
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -5px;
+    /* bottom: 100px; */
+    font-size: 75px;
+    text-align: center;
+  }
 }
