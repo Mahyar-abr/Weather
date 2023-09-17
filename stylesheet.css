@@ -89,6 +89,10 @@ body {
   font-size: 40px;
 }
 
+.weather {
+  font-size: 30px;
+}
+
 .degree {
   max-width: 900px;
   width: 95%;
