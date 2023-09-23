@@ -43,6 +43,7 @@ body {
   padding: 5px;
   margin: auto;
   border-radius: 25px;
+  position: relative;
 }
 
 .top {
@@ -55,6 +56,7 @@ body {
   font-family: "body";
   height: 200px;
   border-radius: 25px;
+  position: relative;
 }
 
 .today,
@@ -79,17 +81,39 @@ body {
   right: 5px;
 }
 
-.country,
-.city,
 .weather {
-  max-width: 800px;
-  width: 80%;
+  max-width: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   margin: auto;
   display: flex;
-  position: relative;
-  bottom: 55px;
+  position: absolute;
+  bottom: 25px;
+  font-size: 40px;
+}
+
+.city {
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  bottom: 70px;
+  font-size: 40px;
+}
+
+.country {
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  bottom: 120px;
   font-size: 40px;
 }
 
@@ -104,9 +128,10 @@ body {
   /* align-items: ; */
   margin: auto;
   display: flex;
-  position: relative;
-  bottom: 230px;
+  position: absolute;
+  bottom: 36px;
   font-size: 120px;
+  right: 40px;
 }
 
 .weather {
@@ -121,7 +146,7 @@ body {
   background-color: #662e9b;
   display: inline-block;
   /* max-width: 250px; */
-  width: 50vh;
+  width: 100%;
   height: 250px;
   align-items: center;
   justify-content: center;
@@ -132,10 +157,13 @@ body {
 }
 
 .cards {
+  max-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  bottom: 120px;
+  position: absolute;
+  /* bottom: 120px; */
+  top: 230px;
 }
 
 .chooseCountry {
@@ -214,6 +242,22 @@ body {
 }
 
 .countryDropdown {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 2000px;
+  width: 85%;
+}
+
+.cityDropdown {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 2000px;
+  width: 85%;
+}
+
+.searchCity {
   padding: 20px;
   display: flex;
   justify-content: center;
