@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const dayOfWeek = daysOfWeek[today.getDay()];
   date.textContent = `${dayOfWeek}`;
 
- 
-
   const weatherDataElement = document.getElementById("weather");
   const weekDay = document.getElementById("weekDay");
 
@@ -47,4 +45,46 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Fetch error:", error);
     });
+
+  fetch("https://restcountries.com/v3.1/all")
+    .then((response) => response.json())
+    .then((data) => {
+      let dropDown = document.querySelector(".countryDropdown");
+      data.forEach((country) => {
+        const option = document.createElement("option");
+        option.value = country.name.common;
+        option.textContent = country.name.common;
+        dropDown.appendChild(option);
+      });
+    })
+    .catch((error) => {
+      console.error("Fetch Error:", error);
+    });
+
+  const chooseCountry = document.querySelector("#chooseCountry");
+  const popupcontent = document.querySelector("#popupcontent");
+  const dropDown = document.querySelector(".countryDropdown");
+  const save = document.querySelector("#save");
+
+  function openPopup() {
+    document.querySelector(".popup").style.display = "flex";
+  }
+
+  function closePopUp() {
+    document.querySelector(".popup").style.display = "none";
+  }
+
+  document.addEventListener("click", function (event) {
+    if (
+      event.target !== dropDown &&
+      event.target !== chooseCountry &&
+      event.target !== popupcontent &&
+      event.target !== save
+    ) {
+      event.preventDefault();
+      closePopUp();
+    }
+  });
+
+  chooseCountry.addEventListener("click", openPopup);
 });
