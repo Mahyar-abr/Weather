@@ -35,7 +35,7 @@ body {
 
 .background {
   background-color: #f86624;
-  max-width: 1300px;
+  max-width: 1050px;
   width: 100%;
   align-content: center;
   height: 540px;
@@ -44,6 +44,8 @@ body {
   margin: auto;
   border-radius: 25px;
   position: relative;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .top {
@@ -51,7 +53,7 @@ body {
   margin: auto;
   margin-top: 20px;
   max-width: 1000px;
-  width: 100%;
+  width: 95%;
   color: aliceblue;
   font-family: "body";
   height: 200px;
@@ -122,8 +124,8 @@ body {
 }
 
 .degree {
-  max-width: 900px;
-  width: 95%;
+  max-width: 100%;
+  width: 100%;
   justify-content: right;
   /* align-items: ; */
   margin: auto;
@@ -131,7 +133,7 @@ body {
   position: absolute;
   bottom: 36px;
   font-size: 120px;
-  right: 40px;
+  right: 15px;
 }
 
 .weather {
@@ -274,10 +276,9 @@ body {
   margin-top: 5px;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1040px) {
   .country,
-  .city,
-  .weather {
+  .city {
     max-width: 800px;
     width: 80%;
     justify-content: center;
@@ -286,6 +287,18 @@ body {
     display: flex;
     position: relative;
     bottom: 30px;
+    font-size: 30px;
+  }
+
+  .weather {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    bottom: 25px;
     font-size: 30px;
   }
 
@@ -308,8 +321,8 @@ body {
     /* align-items: ; */
     margin: auto;
     display: flex;
-    position: relative;
-    bottom: 157px;
+    position: absolute;
+    bottom: 40px;
     font-size: 120px;
   }
 
@@ -322,7 +335,7 @@ body {
     background-color: #662e9b;
     display: inline-block;
     /* max-width: 250px; */
-    width: 32vh;
+    width: 250px;
     height: 250px;
     align-items: center;
     /* justify-content: center; */
@@ -334,7 +347,7 @@ body {
   .cards {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     bottom: 85px;
     flex-wrap: wrap;
   }
@@ -344,7 +357,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 95vh;
+    height: 530px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -352,7 +365,35 @@ body {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1040px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 545px;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 997px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 790px;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 950px) {
   .today,
   .day {
     /* max-width: 900px; */
@@ -397,7 +438,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 95vh;
+    height: 800px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -450,7 +491,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 120vh;
+    height: 800px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -473,7 +514,7 @@ body {
   }
 } */
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 685px) {
   .country,
   .city,
   .weather {
@@ -525,7 +566,7 @@ body {
     background-color: #662e9b;
     display: inline-block;
     /* max-width: 250px; */
-    width: 32vh;
+    width: 250px;
     height: 300px;
     align-items: center;
     justify-content: center;
@@ -537,9 +578,9 @@ body {
   .cards {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     /* bottom: 5px; */
-    top: 10px;
+    top: 210px;
     flex-wrap: wrap;
   }
 
@@ -548,7 +589,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 135vh;
+    height: 865px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -608,7 +649,7 @@ body {
     background-color: #662e9b;
     display: inline-block;
     /* max-width: 250px; */
-    width: 32vh;
+    width: 250px;
     height: 300px;
     align-items: center;
     justify-content: center;
@@ -620,9 +661,9 @@ body {
   .cards {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     /* bottom: 100px; */
-    top: 20px;
+    top: 210px;
     flex-wrap: wrap;
   }
 
@@ -631,7 +672,21 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 135vh;
+    height: 865px;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 597px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 1170px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -689,8 +744,8 @@ body {
     background-color: #662e9b;
     display: inline-block;
     /* max-width: 250px; */
-    width: 32vh;
-    height: 250px;
+    width: 250px;
+    height: 300px;
     align-items: center;
     /* justify-content: center; */
     text-align: center;
@@ -701,23 +756,13 @@ body {
   .cards {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     /* bottom: 0px; */
-    top: 20px;
+    top: 220px;
     flex-wrap: wrap;
   }
 
-  .background {
-    background-color: #f86624;
-    max-width: 1300px;
-    width: 100%;
-    align-content: center;
-    height: 120vh;
-    display: block;
-    padding: 5px;
-    margin: auto;
-    border-radius: 25px;
-  }
+  
 }
 
 /* Background responsive */
@@ -727,7 +772,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 160vh;
+    height: 1180px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -762,7 +807,7 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 164vh;
+    height: 1170px;
     display: block;
     padding: 5px;
     margin: auto;
