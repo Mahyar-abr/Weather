@@ -9,6 +9,9 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="option.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="jquery" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -29,8 +32,8 @@
         <div class="top">
           <p id="todayDate" class="today"></p>
           <p id="weekDay" class="day"></p>
-          <p id="country" class="country">UnitedKingdom</p>
-          <p id="city" class="city">City of London, Greater London</p>
+          <p id="country" class="country"></p>
+          <p id="city" class="city"></p>
           <p id="weather" class="weather"></p>
           <p id="degree" class="degree"></p>
           <div class="cards">
@@ -55,18 +58,23 @@
     </div>
     <div class="popup" id="todo">
       <div class="popup-content" id="popupcontent">
+        <div class="select-box">
+          <label for="country" class="label select-box1"><span class="label-desc">Choose your country</span> </label>
         <select name="country" id="country" class="countryDropdown">
           
         </select>
-
+      </div>
+      <div class="select-box">
+      <label for="city" class="label select-box1"><span class="label-desc">Choose your city</span> </label>
         <select name="city" id="city" class="cityDropdown">
           
         </select>
-
-        <label for="searchCity" class="searchCity"><p>search your city if you couldn't found your city</p></label>
+        <p class="not-found">we couldn't find your city please write your city on the box below</p>
+      </div>
+        <label for="searchCity" class="searchCity" id="searchCitylabel"><p id="searchCitylabeltext" class="searchtext">search your city if you couldn't found your city</p></label>
         <input id="searchCity" type="search" name="searchCity" class="searchCity" placeholder="Type Your City">
 
-        <button class="button-save" id="save">Save</button>
+        <button class="button-save" id="save">Search</button>
         <!-- <input
           class="input"
           type="text"
@@ -83,5 +91,6 @@
         ></textarea> -->
       </div>
     </div>
+    <script src="scriptpage.js"></script>
   </body>
 </html>
