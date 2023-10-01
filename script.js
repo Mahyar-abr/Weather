@@ -34,41 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
   dropDown.addEventListener("change", function () {
     let selectedCountry = this.value;
 
-    // let apiUrl = `https://api.weatherapi.com/v1/current.json?key=190e2717cf5f408e890130520231109&q=${selectedCountry}&aqi=yes`;
-
-    // fetch(apiUrl)
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error(
-    //         `Network response was not ok. Status: ${response.status} - ${response.statusText}`
-    //       );
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     let weatherDataElement = document.getElementById("weather");
-    //     const temperature = data.current.temp_c;
-    //     const condition = data.current.condition.text;
-
-    //     weatherDataElement.textContent = `Temperature: ${temperature}°C, Condition: ${condition}`;
-
-    //     let weatherDegreeElement = document.querySelector(".degree");
-
-    //     const weatherDegree = data.current.temp_c;
-    //     const formattedWeatherDegree = weatherDegree
-    //       .toFixed()
-    //       .replace(/\.0+$/, "");
-
-    //     weatherDegreeElement.textContent = formattedWeatherDegree;
-    //   })
-    //   .catch((error) => {
-    //     console.error("Fetch error:", error);
-    //   });
-
     fetch(`https://countriesnow.space/api/v0.1/countries`)
       .then((response) => response.json())
       .then((data) => {
-        // Assuming you have a dropdown element with class "cityDropdown"
         let cityDropdown = document.querySelector(".cityDropdown");
         cityDropDown.innerHTML = "";
 
@@ -102,10 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let notfoundError = (document.querySelector(
                   ".not-found"
                 ).style.display = "block");
-                // let notfoundTitle = document.createElement("p");
-                // notfoundError.classList.add('not-found');
-                // notfoundTitle.textContent = "we couldn't find your city please write your city on the box below";
-                // notfoundError.appendChild(notfoundTitle);
+
                 throw new Error(
                   `Network response was not ok. Status: ${response.status} - ${response.statusText}`
                 );
@@ -167,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
               let nightDegreeImage =
                 document.querySelector("#degreeNightImage");
 
-              // formattedDate = getTimeAndDay();
               console.log(`${formattedDate} 21:00`);
 
               let specificTimeNight = `${formattedDate} 21:00`;
@@ -191,12 +155,14 @@ document.addEventListener("DOMContentLoaded", function () {
               // Tommorow Degree
 
               let tomorrowDegree = document.querySelector("#degreeTommorow");
-              let tomorrowDegreeImage = document.querySelector("#degreeTommorowImage");
+              let tomorrowDegreeImage = document.querySelector(
+                "#degreeTommorowImage"
+              );
 
-              const { day } = getTimeAndDay(); // Destructure the 'day' property from the returned object
+              const { day } = getTimeAndDay();
 
-              const tomorrow = new Date(); // Create a new Date object
-              tomorrow.setDate(day + 1); // Increment the day
+              const tomorrow = new Date();
+              tomorrow.setDate(day + 1);
 
               const year = tomorrow.getFullYear();
               const month = tomorrow.getMonth() + 1;
@@ -219,7 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 let formattedWeatherForecastTomorrow = Math.round(
                   tommorowTemperatureNight
                 );
-                console.log(`Temperature (Celsius): ${hourDataTomorrow.temp_c}`);
+                console.log(
+                  `Temperature (Celsius): ${hourDataTomorrow.temp_c}`
+                );
                 console.log(`Condition is: ${hourDataTomorrow.condition.text}`);
                 tomorrowDegree.textContent = `${formattedWeatherForecastTomorrow}°C`;
                 tomorrowDegreeImage.src = hourDataTomorrow.condition.icon;
@@ -232,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch((error) => {
               console.error("Fetch error:", error);
             });
-          // Use the selectedCity value here for further processing
         });
       })
 
@@ -256,19 +223,11 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Fetch Error:", error);
     });
 
-  // searchCity.addEventListener("click", function () {
-
-  // })
-
   const chooseCountry = document.querySelector("#chooseCountry");
   const popupcontent = document.querySelector("#popupcontent");
   const save = document.querySelector("#save");
 
   save.addEventListener("click", function () {
-    // if () {
-
-    // } else {
-    // }
     let searchCity = document.querySelector("#searchCity").value;
 
     let selectedCity = searchCity;
