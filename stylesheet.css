@@ -142,12 +142,8 @@ body {
 .left,
 .middle,
 .right {
-  /* padding: 50px; */
-  /* margin-bottom: 200px; */
-  /* margin-top: 5px; */
   background-color: #662e9b;
   display: inline-block;
-  /* max-width: 250px; */
   width: 100%;
   height: 250px;
   align-items: center;
@@ -158,13 +154,17 @@ body {
   border-radius: 25px;
 }
 
+.cardelementposition {
+  padding-top: 20px;
+  font-size: 25px;
+}
+
 .cards {
   max-width: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  /* bottom: 120px; */
   top: 230px;
 }
 
@@ -176,7 +176,7 @@ body {
 .chooseCountry i {
   position: relative;
   top: 50%;
-  right: 10px; /* Adjust this value to position the icon */
+  right: 10px;
   transform: translateY(-50%);
 }
 .button-66 {
@@ -223,7 +223,7 @@ body {
 .popup {
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
-  height: 65rem;
+  height: 100%;
   position: absolute;
   top: 0;
   display: none;
@@ -278,7 +278,7 @@ body {
 }
 
 .searchtext {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   text-transform: capitalize;
 }
@@ -336,16 +336,12 @@ body {
   .left,
   .middle,
   .right {
-    /* padding: 50px; */
-    /* margin-bottom: 200px; */
     margin-top: 5px;
     background-color: #662e9b;
     display: inline-block;
-    /* max-width: 250px; */
     width: 250px;
     height: 250px;
     align-items: center;
-    /* justify-content: center; */
     text-align: center;
     margin-left: 25px;
     margin-right: 25px;
@@ -398,13 +394,35 @@ body {
     margin: auto;
     border-radius: 25px;
   }
+  .popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 135%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .popup-content {
+    margin: auto 0;
+    height: 500px;
+    max-width: 800px;
+    width: 80%;
+    background: #d9d9d9;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    align-content: center;
+    display: block;
+    top: 80px;
+  }
 }
 
 @media screen and (max-width: 950px) {
   .today,
   .day {
-    /* max-width: 900px; */
-    /* width: 10%; */
     justify-content: left;
     margin: auto;
     display: block;
@@ -414,16 +432,12 @@ body {
   }
 
   .degree {
-    /* max-width: 900px; */
-    /* width: 95%; */
     text-align: right;
-    /* align-items: ; */
     margin: auto;
     display: flex;
     position: relative;
     bottom: 95px;
     font-size: 100px;
-    /* left: 5%; */
   }
 
   .country,
@@ -456,8 +470,6 @@ body {
 @media screen and (max-width: 821px) {
   .today,
   .day {
-    /* max-width: 900px; */
-    /* width: 10%; */
     justify-content: left;
     margin: auto;
     display: block;
@@ -467,17 +479,12 @@ body {
   }
 
   .degree {
-    /* max-width: 900px; */
-    /* width: 95%; */
     text-align: right;
-    /* align-items: ; */
     margin: auto;
     display: flex;
     position: absolute;
-    /* bottom: 80px; */
     font-size: 100px;
     top: 90px;
-    /* left: 5%; */
   }
 
   .country,
@@ -506,21 +513,6 @@ body {
     border-radius: 25px;
   }
 }
-
-/* Background responsive */
-/* @media screen and (max-width: 821px) {
-  .background {
-    background-color: #f86624;
-    max-width: 1300px;
-    width: 100%;
-    align-content: center;
-    height: 120vh;
-    display: block;
-    padding: 5px;
-    margin: auto;
-    border-radius: 25px;
-  }
-} */
 
 @media screen and (max-width: 685px) {
   .country,
@@ -551,14 +543,10 @@ body {
   }
 
   .degree {
-    /* max-width: 185px; */
-    /* width: 17%; */
     justify-content: right;
-    /* align-items: ; */
     margin: auto;
     display: block;
     position: relative;
-    /* top: 20px; */
     left: 15px;
     font-size: 60px;
     bottom: 5px;
@@ -568,12 +556,9 @@ body {
   .left,
   .middle,
   .right {
-    /* padding: 50px; */
-    /* margin-bottom: 200px; */
     margin-top: 5px;
     background-color: #662e9b;
     display: inline-block;
-    /* max-width: 250px; */
     width: 250px;
     height: 300px;
     align-items: center;
@@ -587,7 +572,6 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    /* bottom: 5px; */
     top: 210px;
     flex-wrap: wrap;
   }
@@ -602,6 +586,17 @@ body {
     padding: 5px;
     margin: auto;
     border-radius: 25px;
+  }
+
+  .popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 145%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-content: center;
   }
 }
 
@@ -633,17 +628,12 @@ body {
   }
 
   .degree {
-    /* max-width: 185px; */
-    /* width: 17%; */
     justify-content: right;
-    /* align-items: ; */
     margin: auto;
     display: block;
     position: relative;
-    /* top: 20px; */
     left: 15px;
     font-size: 60px;
-    /* bottom: 5px; */
     top: 5px;
     text-align: center;
   }
@@ -651,12 +641,9 @@ body {
   .left,
   .middle,
   .right {
-    /* padding: 50px; */
-    /* margin-bottom: 200px; */
     margin-top: 5px;
     background-color: #662e9b;
     display: inline-block;
-    /* max-width: 250px; */
     width: 250px;
     height: 300px;
     align-items: center;
@@ -670,7 +657,6 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    /* bottom: 100px; */
     top: 210px;
     flex-wrap: wrap;
   }
@@ -700,6 +686,17 @@ body {
     margin: auto;
     border-radius: 25px;
   }
+
+  .popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 185%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -713,7 +710,6 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    /* bottom: 70px; */
     font-size: 15px;
   }
 
@@ -731,10 +727,7 @@ body {
   }
 
   .degree {
-    /* max-width: 185px; */
-    /* width: 55%; */
     justify-content: right;
-    /* align-items: ; */
     margin: auto;
     display: block;
     position: relative;
@@ -746,16 +739,12 @@ body {
   .left,
   .middle,
   .right {
-    /* padding: 50px; */
-    /* margin-bottom: 200px; */
     margin-top: 5px;
     background-color: #662e9b;
     display: inline-block;
-    /* max-width: 250px; */
     width: 250px;
     height: 300px;
     align-items: center;
-    /* justify-content: center; */
     text-align: center;
     margin-left: 25px;
     margin-right: 25px;
@@ -765,12 +754,9 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    /* bottom: 0px; */
     top: 220px;
     flex-wrap: wrap;
   }
-
-  
 }
 
 /* Background responsive */
@@ -799,12 +785,22 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    /* bottom: 70px; */
     font-size: 15px;
   }
 
   .weather {
     font-size: 13px;
+  }
+
+  .popup {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 190%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-content: center;
   }
 }
 
@@ -846,10 +842,7 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    /* bottom: 70px; */
     font-size: 15px;
-    /* top: -200px; */
-    /* bottom: ; */
   }
 
   .today,
@@ -866,15 +859,10 @@ body {
   }
 
   .degree {
-    /* max-width: 185px; */
-    /* width: 55%; */
-    /* justify-content: right; */
-    /* align-items: ; */
     margin: auto;
     display: block;
     position: relative;
     top: -5px;
-    /* bottom: 100px; */
     font-size: 75px;
     text-align: center;
   }
@@ -891,10 +879,7 @@ body {
     margin: auto;
     display: flex;
     position: relative;
-    /* bottom: 70px; */
     font-size: 10px;
-    /* top: -200px; */
-    /* bottom: ; */
   }
 
   .city {
@@ -914,15 +899,10 @@ body {
   }
 
   .degree {
-    /* max-width: 185px; */
-    /* width: 55%; */
-    /* justify-content: right; */
-    /* align-items: ; */
     margin: auto;
     display: block;
     position: relative;
     top: -5px;
-    /* bottom: 100px; */
     font-size: 75px;
     text-align: center;
     left: 8px;
@@ -931,16 +911,12 @@ body {
   .left,
   .middle,
   .right {
-    /* padding: 50px; */
-    /* margin-bottom: 200px; */
     margin-top: 5px;
     background-color: #662e9b;
     display: inline-block;
-    /* max-width: 250px; */
     width: 32vh;
     height: 250px;
     align-items: center;
-    /* justify-content: center; */
     text-align: center;
     margin-left: 25px;
     margin-right: 25px;
@@ -950,7 +926,6 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    /* bottom: 0px; */
     top: 50px;
     flex-wrap: wrap;
   }

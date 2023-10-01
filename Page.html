@@ -9,9 +9,13 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="stylesheet.css" />
-    <link rel="stylesheet" href="option.css">
+    <link rel="stylesheet" href="option.css" />
+    <link rel="stylesheet" href="textStyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="jquery" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    <link
+      rel="jquery"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -38,19 +42,25 @@
           <p id="degree" class="degree"></p>
           <div class="cards">
             <div class="left">
-              <img src="" alt="" />
-              <p>DAY</p>
-              <p id="degreeDay">28'</p>
+              <div class="cardelementposition">
+                <p>DAY</p>
+                <p id="degreeDay" class="forecast-text"></p>
+                <img alt="" id="degreeDayImage" />
+              </div>
             </div>
             <div class="middle">
-              <img src="" alt="" />
-              <p>NIGHT</p>
-              <p id="degreeNight">15'</p>
+              <div class="cardelementposition">
+                <p>NIGHT</p>
+                <p id="degreeNight" class="forecast-text"></p>
+                <img id="degreeNightImage" alt="" />
+              </div>
             </div>
             <div class="right">
-              <img src="" alt="" />
-              <p>TOMMOROW</p>
-              <p id="degreeTommorow">15'</p>
+              <div class="cardelementposition">
+                <p>TOMMOROW</p>
+                <p id="degreeTommorow" class="forecast-text"></p>
+                <img id="degreeTommorowImage" src="" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -59,20 +69,32 @@
     <div class="popup" id="todo">
       <div class="popup-content" id="popupcontent">
         <div class="select-box">
-          <label for="country" class="label select-box1"><span class="label-desc">Choose your country</span> </label>
-        <select name="country" id="country" class="countryDropdown">
-          
-        </select>
-      </div>
-      <div class="select-box">
-      <label for="city" class="label select-box1"><span class="label-desc">Choose your city</span> </label>
-        <select name="city" id="city" class="cityDropdown">
-          
-        </select>
-        <p class="not-found">we couldn't find your city please write your city on the box below</p>
-      </div>
-        <label for="searchCity" class="searchCity" id="searchCitylabel"><p id="searchCitylabeltext" class="searchtext">search your city if you couldn't found your city</p></label>
-        <input id="searchCity" type="search" name="searchCity" class="searchCity" placeholder="Type Your City">
+          <label for="country" class="label select-box1"
+            ><span class="label-desc">Choose your country</span>
+          </label>
+          <select name="country" id="country" class="countryDropdown"></select>
+        </div>
+        <div class="select-box">
+          <label for="city" class="label select-box1"
+            ><span class="label-desc">Choose your city</span>
+          </label>
+          <select name="city" id="city" class="cityDropdown"></select>
+          <p class="not-found">
+            we couldn't find your city please write your city on the box below
+          </p>
+        </div>
+        <label for="searchCity" class="searchCity" id="searchCitylabel"
+          ><p id="searchCitylabeltext" class="searchtext">
+            search your city if you couldn't found your city
+          </p></label
+        >
+        <input
+          id="searchCity"
+          type="search"
+          name="searchCity"
+          class="searchCity"
+          placeholder="Type Your City"
+        />
 
         <button class="button-save" id="save">Search</button>
         <!-- <input
