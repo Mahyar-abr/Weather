@@ -199,6 +199,10 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((error) => {
               console.error("Fetch error:", error);
+
+              alert("Please check your connection and use a VPN");
+
+              selectBox.appendChild(connectionError);
             });
         });
       })
@@ -212,10 +216,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       let dropDown = document.querySelector(".countryDropdown");
+
+      let countryName = [];
       data.forEach((country) => {
+        countryName.push(country.name.common);
+      });
+
+      countryName.sort();
+
+      countryName.forEach((name) => {
         const option = document.createElement("option");
-        option.value = country.name.common;
-        option.textContent = country.name.common;
+        option.value = name;
+        option.textContent = name.charAt(0).toUpperCase() + name.slice(1);
         dropDown.appendChild(option);
       });
     })
