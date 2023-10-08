@@ -8,9 +8,10 @@
     />
     <title>Document</title>
 
-    <link rel="stylesheet" href="stylesheet.css" />
-    <link rel="stylesheet" href="option.css" />
-    <link rel="stylesheet" href="textStyle.css" />
+    <link rel="stylesheet" href="/css/stylesheet.css" />
+    <link rel="stylesheet" href="/css/option.css" />
+    <link rel="stylesheet" href="/css/textStyle.css" />
+    <link rel="stylesheet" href="/css/inputButton.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="jquery"
@@ -21,14 +22,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
   </head>
   <body>
     <div class="container">
       <h2 class="headTitle">Weather Forecast Application</h2>
       <div class="chooseCountry">
         <button class="button-66" role="button" id="chooseCountry">
-          <i class="fa fa-cog" aria-hidden="true"></i>Choose Your Country
+          <i class="fa fa-cog" aria-hidden="true" id="iconClick"></i>Choose Your Country
         </button>
       </div>
 
@@ -83,18 +84,24 @@
             we couldn't find your city please write your city on the box below
           </p>
         </div>
-        <label for="searchCity" class="searchCity" id="searchCitylabel"
+        <label for="searchCity" class="searchCityText" id="searchCitylabel"
           ><p id="searchCitylabeltext" class="searchtext">
             search your city if you couldn't found your city
           </p></label
         >
-        <input
+        <!-- <input
           id="searchCity"
           type="search"
           name="searchCity"
           class="searchCity"
           placeholder="Type Your City"
-        />
+        /> -->
+
+        <label for="inp" class="inp">
+          <input type="text" id="searchCity" placeholder="&nbsp;" class="searchCityLabelInput">
+          <span class="label-search searchCity">Type Your City</span>
+          <span class="focus-bg"></span>
+        </label>
 
         <button class="button-save" id="save">Search</button>
         <!-- <input
@@ -113,6 +120,6 @@
         ></textarea> -->
       </div>
     </div>
-    <script src="scriptpage.js"></script>
+    <script src="/js/scriptpage.js"></script>
   </body>
 </html>

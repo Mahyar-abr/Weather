@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let selectedCity = searchCity;
 
-    let apiUrl = `https://api.weatherapi.com/v1/current.json?key=190e2717cf5f408e890130520231109&q=${selectedCity}&days=1&aqi=yes`;
+    let apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=8e3a2a46298b4259a1661406231109&q=${selectedCity}&days=2&aqi=yes&alerts=no`;
 
     fetch(apiUrl)
       .then((response) => {
@@ -277,6 +277,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
         weatherDegreeElement.textContent = formattedWeatherDegree;
 
+        //Day Degree
+
+        let dayDegree = document.querySelector("#degreeDay");
+        let dayDegreeImage = document.querySelector("#degreeDayImage");
+
+        const { formattedDate } = getTimeAndDay();
+        console.log(`${formattedDate} 09:00`);
+
+        let specificTimeDay = `${formattedDate} 09:00`;
+        let hourDataDay = data.forecast.forecastday[0].hour.find(
+          (data) => data.time === specificTimeDay
+        );
+
+        if (hourDataDay) {
+          let tommorowTemperature = hourDataDay.temp_c;
+          let formattedWeatherForecast = Math.round(tommorowTemperature);
+          console.log(`Temperature (Celsius): ${hourDataDay.temp_c}`);
+          console.log(`Condition is: ${hourDataDay.condition.text}`);
+          dayDegree.textContent = `${formattedWeatherForecast}°C`;
+          dayDegreeImage.src = hourDataDay.condition.icon;
+        } else {
+          console.log(`Nothing found!`);
+        }
+
+        //Night Degree
+
+        let nightDegree = document.querySelector("#degreeNight");
+        let nightDegreeImage =
+          document.querySelector("#degreeNightImage");
+
+        console.log(`${formattedDate} 21:00`);
+
+        let specificTimeNight = `${formattedDate} 21:00`;
+        let hourDataNight = data.forecast.forecastday[0].hour.find(
+          (data) => data.time === specificTimeNight
+        );
+
+        if (hourDataNight) {
+          let tommorowTemperatureNight = hourDataNight.temp_c;
+          let formattedWeatherForecastNight = Math.round(
+            tommorowTemperatureNight
+          );
+          console.log(`Temperature (Celsius): ${hourDataNight.temp_c}`);
+          console.log(`Condition is: ${hourDataNight.condition.text}`);
+          nightDegree.textContent = `${formattedWeatherForecastNight}°C`;
+          nightDegreeImage.src = hourDataNight.condition.icon;
+        } else {
+          console.log(`Nothing found!`);
+        }
+
+        // Tommorow Degree
+
+        let tomorrowDegree = document.querySelector("#degreeTommorow");
+        let tomorrowDegreeImage = document.querySelector(
+          "#degreeTommorowImage"
+        );
+
+        const { day } = getTimeAndDay();
+
+        const tomorrow = new Date();
+        tomorrow.setDate(day + 1);
+
+        const year = tomorrow.getFullYear();
+        const month = tomorrow.getMonth() + 1;
+        const formattedDateTomorrow = `${year}-${month
+          .toString()
+          .padStart(2, "0")}-${tomorrow
+          .getDate()
+          .toString()
+          .padStart(2, "0")}`;
+
+        console.log(`${formattedDateTomorrow} 16:00`);
+
+        let specificTimeTomorrow = `${formattedDateTomorrow} 16:00`;
+        let hourDataTomorrow = data.forecast.forecastday[1].hour.find(
+          (data) => data.time === specificTimeTomorrow
+        );
+
+        if (hourDataTomorrow) {
+          let tommorowTemperatureNight = hourDataTomorrow.temp_c;
+          let formattedWeatherForecastTomorrow = Math.round(
+            tommorowTemperatureNight
+          );
+          console.log(
+            `Temperature (Celsius): ${hourDataTomorrow.temp_c}`
+          );
+          console.log(`Condition is: ${hourDataTomorrow.condition.text}`);
+          tomorrowDegree.textContent = `${formattedWeatherForecastTomorrow}°C`;
+          tomorrowDegreeImage.src = hourDataTomorrow.condition.icon;
+        } else {
+          console.log(`Nothing found!`);
+        }
+
         closePopUp();
       })
       .catch((error) => {
@@ -293,9 +386,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let searchCity = document.querySelector("#searchCity");
+  let searchCityClass = document.querySelector(".searchCity");
   let searchCityLabel = document.querySelector("#searchCitylabel");
   let searchCityLabelText = document.querySelector("#searchCitylabeltext");
   let cityDropDown = document.querySelector(".cityDropdown");
+  let searchBox = document.querySelector(".inp");
+  let searchBoxSpan = document.querySelector("#inp");
+  let searchBoxInput = document.querySelector(".label-search");
+  let searchBoxbg = document.querySelector(".focus-bg");
+  let searchCityLabelInput = document.querySelector(".searchCityLabelInput");
   document.addEventListener("click", function (event) {
     if (
       event.target !== dropDown &&
@@ -305,12 +404,22 @@ document.addEventListener("DOMContentLoaded", function () {
       event.target !== cityDropDown &&
       event.target !== searchCity &&
       event.target !== searchCityLabel &&
-      event.target !== searchCityLabelText
+      event.target !== searchCityLabelText &&
+      event.target !== searchBox && 
+      event.target !== searchBoxInput &&
+      event.target !== searchBoxbg &&
+      event.target !== searchBoxSpan &&
+      event.target !== searchCityClass &&
+      event.target !== searchCityLabelInput &&
+      event.target !== iconClick
     ) {
       event.preventDefault();
       closePopUp();
     }
   });
 
+
+  let iconClick = document.querySelector("#iconClick");
   chooseCountry.addEventListener("click", openPopup);
+  iconClick.addEventListener("click", openPopup);
 });

@@ -1,11 +1,11 @@
 @font-face {
   font-family: "body";
-  src: url(Font/BLUEHIGD.TTF);
+  src: url(/Font/BLUEHIGD.TTF);
 }
 
 @font-face {
   font-family: "head";
-  src: url(Font/MADE\ TOMMY\ Bold_PERSONAL\ USE.otf);
+  src: url(/Font/MADE\ TOMMY\ Bold_PERSONAL\ USE.otf);
 }
 
 * {
@@ -257,7 +257,7 @@ body {
   width: 85%;
 }
 
-.searchCity {
+.searchCityText {
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -278,6 +278,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   text-transform: capitalize;
+  text-align: center;
 }
 
 @media screen and (max-width: 1040px) {
