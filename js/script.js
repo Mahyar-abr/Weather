@@ -240,9 +240,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const save = document.querySelector("#save");
 
   save.addEventListener("click", function () {
-    let searchCity = document.querySelector("#searchCity").value;
 
+    let searchCity = document.querySelector("#searchCity").value;
+    
     let selectedCity = searchCity;
+
+    if (searchCity === "") {
+      alert('Please enter a name of city');
+    }
 
     let apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=8e3a2a46298b4259a1661406231109&q=${selectedCity}&days=2&aqi=yes&alerts=no`;
 
