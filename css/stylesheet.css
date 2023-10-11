@@ -366,7 +366,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1014px) {
   .background {
     background-color: #f86624;
     max-width: 1300px;
@@ -465,7 +465,7 @@ body {
   }
 }
 
-@media screen and (max-width: 821px) {
+@media screen and (max-width: 698px) {
   .today,
   .day {
     justify-content: left;
@@ -598,7 +598,7 @@ body {
   }
 }
 
-@media screen and (max-width: 612px) {
+@media screen and (max-width: 615px) {
   .country,
   .city,
   .weather {
