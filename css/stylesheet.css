@@ -372,7 +372,21 @@ body {
     max-width: 1300px;
     width: 100%;
     align-content: center;
-    height: 800px;
+    height: 540px;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
+@media only screen and (max-device-width: 1014px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 540px;
     display: block;
     padding: 5px;
     margin: auto;
@@ -433,8 +447,9 @@ body {
     text-align: right;
     margin: auto;
     display: flex;
-    position: relative;
-    bottom: 95px;
+    position: absolute;
+    /* bottom: 95px; */
+    top: 90px;
     font-size: 100px;
   }
 
@@ -512,6 +527,20 @@ body {
   }
 }
 
+@media only screen and (max-device-width: 698px) {
+  .background {
+    background-color: #f86624;
+    max-width: 1300px;
+    width: 100%;
+    align-content: center;
+    height: 800px;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    border-radius: 25px;
+  }
+}
+
 @media screen and (max-width: 685px) {
   .country,
   .city,
@@ -544,10 +573,11 @@ body {
     justify-content: right;
     margin: auto;
     display: block;
-    position: relative;
-    left: 15px;
+    position: absolute;
+    /* left: 15px; */
     font-size: 60px;
     bottom: 5px;
+    top: 120px;
     text-align: center;
   }
 
@@ -629,10 +659,10 @@ body {
     justify-content: right;
     margin: auto;
     display: block;
-    position: relative;
-    left: 15px;
+    position: absolute;
+    /* left: 15px; */
     font-size: 60px;
-    top: 5px;
+    top: 130px;
     text-align: center;
   }
 
@@ -728,8 +758,8 @@ body {
     justify-content: right;
     margin: auto;
     display: block;
-    position: relative;
-    top: 15px;
+    position: absolute;
+    top: 115px;
     font-size: 75px;
     text-align: center;
   }
@@ -859,8 +889,8 @@ body {
   .degree {
     margin: auto;
     display: block;
-    position: relative;
-    top: -5px;
+    position: absolute;
+    /* top: -5px; */
     font-size: 75px;
     text-align: center;
   }
