@@ -58,6 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         cityDropdown.addEventListener("change", function () {
+          let apiTimeout;
+          apiTimeout = setTimeout(function () {
+            alert("Check your VPN connection. The request is taking too long.");
+            // Optionally, you can cancel the ongoing request here if needed
+          }, 5000);
           let selectedCity = this.value;
           console.log("Selected city:", selectedCity);
 
@@ -78,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
               return response.json();
             })
             .then((data) => {
+              if (apiTimeout) {
+                clearTimeout(apiTimeout); // Clear the timeout if there's an error
+              }
               let notfoundError = (document.querySelector(
                 ".not-found"
               ).style.display = "none");
@@ -199,8 +207,10 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((error) => {
               console.error("Fetch error:", error);
-
-              alert("Please check your connection and use a VPN");
+              if (apiTimeout) {
+                clearTimeout(apiTimeout); // Clear the timeout if there's an error
+              }
+              // alert("Please check your connection and use a VPN");
 
               selectBox.appendChild(connectionError);
             });
@@ -212,14 +222,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  fetch("https://restcountries.com/v3.1/all")
+  fetch("https://countriesnow.space/api/v0.1/countries")
     .then((response) => response.json())
     .then((data) => {
       let dropDown = document.querySelector(".countryDropdown");
 
       let countryName = [];
-      data.forEach((country) => {
-        countryName.push(country.name.common);
+      data.data.forEach((country) => {
+        countryName.push(country.country);
       });
 
       countryName.sort();
@@ -240,13 +250,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const save = document.querySelector("#save");
 
   save.addEventListener("click", function () {
-
     let searchCity = document.querySelector("#searchCity").value;
-    
+
     let selectedCity = searchCity;
 
     if (searchCity === "") {
-      alert('Please enter a name of city');
+      alert("Please enter a name of city");
     }
 
     let apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=8e3a2a46298b4259a1661406231109&q=${selectedCity}&days=2&aqi=yes&alerts=no`;
@@ -309,8 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //Night Degree
 
         let nightDegree = document.querySelector("#degreeNight");
-        let nightDegreeImage =
-          document.querySelector("#degreeNightImage");
+        let nightDegreeImage = document.querySelector("#degreeNightImage");
 
         console.log(`${formattedDate} 21:00`);
 
@@ -348,10 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const month = tomorrow.getMonth() + 1;
         const formattedDateTomorrow = `${year}-${month
           .toString()
-          .padStart(2, "0")}-${tomorrow
-          .getDate()
-          .toString()
-          .padStart(2, "0")}`;
+          .padStart(2, "0")}-${tomorrow.getDate().toString().padStart(2, "0")}`;
 
         console.log(`${formattedDateTomorrow} 16:00`);
 
@@ -365,9 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let formattedWeatherForecastTomorrow = Math.round(
             tommorowTemperatureNight
           );
-          console.log(
-            `Temperature (Celsius): ${hourDataTomorrow.temp_c}`
-          );
+          console.log(`Temperature (Celsius): ${hourDataTomorrow.temp_c}`);
           console.log(`Condition is: ${hourDataTomorrow.condition.text}`);
           tomorrowDegree.textContent = `${formattedWeatherForecastTomorrow}°C`;
           tomorrowDegreeImage.src = hourDataTomorrow.condition.icon;
@@ -400,6 +403,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let searchBoxInput = document.querySelector(".label-search");
   let searchBoxbg = document.querySelector(".focus-bg");
   let searchCityLabelInput = document.querySelector(".searchCityLabelInput");
+  let labelSearch = document.querySelector(".label");
+  let labelSearchCity = document.querySelector("#cityLabel");
   document.addEventListener("click", function (event) {
     if (
       event.target !== dropDown &&
@@ -410,19 +415,20 @@ document.addEventListener("DOMContentLoaded", function () {
       event.target !== searchCity &&
       event.target !== searchCityLabel &&
       event.target !== searchCityLabelText &&
-      event.target !== searchBox && 
+      event.target !== searchBox &&
       event.target !== searchBoxInput &&
       event.target !== searchBoxbg &&
       event.target !== searchBoxSpan &&
       event.target !== searchCityClass &&
       event.target !== searchCityLabelInput &&
-      event.target !== iconClick
+      event.target !== iconClick &&
+      event.target !== labelSearch &&
+      event.target !== labelSearchCity
     ) {
       event.preventDefault();
       closePopUp();
     }
   });
-
 
   let iconClick = document.querySelector("#iconClick");
   chooseCountry.addEventListener("click", openPopup);
