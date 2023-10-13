@@ -34,28 +34,73 @@ document.addEventListener("DOMContentLoaded", function () {
   dropDown.addEventListener("change", function () {
     let selectedCountry = this.value;
 
-    fetch(`https://countriesnow.space/api/v0.1/countries`)
+    fetch("https://www.universal-tutorial.com/api/getaccesstoken", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "api-token":
+          "8ayCCK9NETRJ_LjQhMU58OENERdZ7LO_Zfqgnub7R76ucr8pP8F-lzOSvGwkzpq3zHQ",
+        "user-email": "fishermike814@gmail.com",
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
-        let cityDropdown = document.querySelector(".cityDropdown");
-        cityDropDown.innerHTML = "";
+        // Use the auth_token from the response in your subsequent API requests
+        const auth_token = data.auth_token;
+        console.log("Authorization Token:", auth_token);
 
-        let selectedCountryData = data.data.find(
-          (countryData) => countryData.country === selectedCountry
-        );
+        fetch(
+          `https://www.universal-tutorial.com/api/states/${selectedCountry}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${auth_token}`,
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            let cities = data.map((state) => state.state_name);
+            console.log(cities);
+            
+            let cityDropdown = document.querySelector(".cityDropdown");
+            cityDropDown.innerHTML = "";
 
-        if (selectedCountryData && selectedCountryData.cities) {
-          selectedCountryData.cities.forEach((city) => {
-            const option = document.createElement("option");
+            cities.forEach(city => {
+
+              const option = document.createElement("option");
             option.value = city;
             option.textContent = city;
             cityDropdown.appendChild(option);
-          });
-        } else {
-          const option = document.createElement("option");
-          option.textContent = "No cities found";
-          cityDropdown.appendChild(option);
-        }
+            });
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+
+    // fetch(`https://countriesnow.space/api/v0.1/countries`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+        let cityDropdown = document.querySelector(".cityDropdown");
+        // cityDropDown.innerHTML = "";
+
+        // let selectedCountryData = data.data.find(
+        //   (countryData) => countryData.country === selectedCountry
+        // );
+
+        // if (selectedCountryData && selectedCountryData.cities) {
+        //   selectedCountryData.cities.forEach((city) => {
+        //     const option = document.createElement("option");
+        //     option.value = city;
+        //     option.textContent = city;
+        //     cityDropdown.appendChild(option);
+        //   });
+        // } else {
+        //   const option = document.createElement("option");
+        //   option.textContent = "No cities found";
+        //   cityDropdown.appendChild(option);
+        // }
 
         cityDropdown.addEventListener("change", function () {
           let apiTimeout;
@@ -214,36 +259,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
               selectBox.appendChild(connectionError);
             });
-        });
+      //   });
       })
 
-      .catch((error) => {
-        console.error("Fetch Error:", error);
-      });
+      // .catch((error) => {
+      //   console.error("Fetch Error:", error);
+      // });
   });
 
-  fetch("https://countriesnow.space/api/v0.1/countries")
+  //GET Country List
+
+  fetch("https://www.universal-tutorial.com/api/getaccesstoken", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "api-token":
+        "8ayCCK9NETRJ_LjQhMU58OENERdZ7LO_Zfqgnub7R76ucr8pP8F-lzOSvGwkzpq3zHQ",
+      "user-email": "fishermike814@gmail.com",
+    },
+  })
     .then((response) => response.json())
     .then((data) => {
-      let dropDown = document.querySelector(".countryDropdown");
+      // Use the auth_token from the response in your subsequent API requests
+      const auth_token = data.auth_token;
+      console.log("Authorization Token:", auth_token);
+      // return auth_token;
 
-      let countryName = [];
-      data.data.forEach((country) => {
-        countryName.push(country.country);
-      });
+      // Now you can use this auth_token in your API requests
+      // Example:
+      fetch("https://www.universal-tutorial.com/api/countries/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${auth_token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let countries = data.map((country) => country.country_name);
+          console.log(countries);
 
-      countryName.sort();
+          //
 
-      countryName.forEach((name) => {
-        const option = document.createElement("option");
-        option.value = name;
-        option.textContent = name.charAt(0).toUpperCase() + name.slice(1);
-        dropDown.appendChild(option);
-      });
+          let dropDown = document.querySelector(".countryDropdown");
+
+          let countryName = [];
+          data.forEach((country) => {
+            countryName.push(country.country_name);
+          });
+
+          countryName.sort();
+
+          countryName.forEach((name) => {
+            const option = document.createElement("option");
+            option.value = name;
+            option.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+            dropDown.appendChild(option);
+          });
+        })
+        .catch((error) => console.error("Error:", error));
     })
-    .catch((error) => {
-      console.error("Fetch Error:", error);
-    });
+
+    .catch((error) => console.error("Error:", error));
+
+  //Previous method to getting countries
+
+  // fetch("https://countriesnow.space/api/v0.1/countries")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     let dropDown = document.querySelector(".countryDropdown");
+
+  //     let countryName = [];
+  //     data.data.forEach((country) => {
+  //       countryName.push(country.country);
+  //     });
+
+  //     countryName.sort();
+
+  //     countryName.forEach((name) => {
+  //       const option = document.createElement("option");
+  //       option.value = name;
+  //       option.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+  //       dropDown.appendChild(option);
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.error("Fetch Error:", error);
+  //   });
 
   const chooseCountry = document.querySelector("#chooseCountry");
   const popupcontent = document.querySelector("#popupcontent");

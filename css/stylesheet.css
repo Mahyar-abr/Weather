@@ -1,11 +1,11 @@
 @font-face {
   font-family: "body";
-  src: url(/Font/BLUEHIGD.TTF);
+  src: url(/Weather/Font/BLUEHIGD.TTF);
 }
 
 @font-face {
   font-family: "head";
-  src: url(/Font/MADE\ TOMMY\ Bold_PERSONAL\ USE.otf);
+  src: url(/Weather/Font/MADE\ TOMMY\ Black_PERSONAL\ USE.otf);
 }
 
 * {
@@ -478,9 +478,15 @@ body {
     margin: auto;
     border-radius: 25px;
   }
+
+  .weather {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
-@media screen and (max-width: 698px) {
+@media screen and (max-width: 750px) {
   .today,
   .day {
     justify-content: left;
@@ -554,6 +560,11 @@ body {
     position: relative;
     bottom: 45px;
     font-size: 20px;
+  }
+
+  .weather {
+    display: flex;
+    text-align: left;
   }
 
   .today,
@@ -877,13 +888,13 @@ body {
   .day {
     max-width: 100px;
     width: 50%;
-    justify-content: left;
+    /* justify-content: left; */
     margin: auto;
     display: flex;
     position: relative;
     font-size: 20px;
     top: 75px;
-    left: 20px;
+    /* left: 20px; */
   }
 
   .degree {
