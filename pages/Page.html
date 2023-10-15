@@ -7,6 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Document</title>
+    <link rel="manifest" href="/Weather/js/manifest.json">
 
     <link rel="stylesheet" href="/Weather/css/stylesheet.css" />
     <link rel="stylesheet" href="/Weather/css/option.css" />
@@ -23,6 +24,7 @@
     />
 
     <script src="/Weather/js/script.js"></script>
+    <link rel="stylesheet" href="/Weather/js/manifest.json">
   </head>
   <body>
     <div class="container">
@@ -121,5 +123,17 @@
       </div>
     </div>
     <script src="/Weather/js/scriptpage.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.error('Error registering Service WorkerHi:', error);
+    });
+}
+    </script>
   </body>
 </html>
