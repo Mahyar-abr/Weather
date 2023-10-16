@@ -2,7 +2,7 @@
   "name": "Weather",
   "short_name": "Weather",
   "description": "Weather",
-  "start_url": "/Weather/pages/Page.html",
+  "start_url": "/pages/Page.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
