@@ -7,17 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Document</title>
-    <script>
-      if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('js/service-worker.js')
-    .then(registration => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    })
-    .catch(error => {
-      console.error('Error registering Service WorkerHi:', error);
-    });
-}
-    </script>
+    
     <link rel="manifest" href="https://raw.githubusercontent.com/Mahyar-abr/Weather/master/js/manifest.json">
 
     <link rel="stylesheet" href="css/stylesheet.css" />
@@ -135,7 +125,17 @@
       </div>
     </div>
     <script src="js/scriptpage.js"></script>
-
+    <script>
+      if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('js/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.error('Error registering Service WorkerHi:', error);
+    });
+}
+    </script>
     
   </body>
 </html>
