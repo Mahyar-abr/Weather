@@ -1,3 +1,5 @@
+# Instructions
+If you are from iran use VPN in order to get the data.
 # Weather
 Introducing the ultimate weather companion: our web application that goes above and beyond to forecast weather conditions for every moment of your day! 
 Never step outside unprepared again as this innovative tool predicts the weather not only for now, but also for tomorrow, both day and night. 
