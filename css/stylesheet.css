@@ -1,11 +1,11 @@
 @font-face {
   font-family: "body";
-  src: url(/Font/BLUEHIGD.TTF);
+  src: url(/BLUEHIGD.TTF);
 }
 
 @font-face {
   font-family: "head";
-  src: url(/Font/BlackPersonal.otf);
+  src: url(/BlackPersonal.otf);
 }
 
 :root {
