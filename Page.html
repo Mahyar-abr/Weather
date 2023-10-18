@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link rel="stylesheet" href="css/option.css" />
     <link rel="stylesheet" href="css/textStyle.css" />
-    <link rel="stylesheet" href="inputButton.css">
+    <link rel="stylesheet" href="css/inputButton.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="jquery"
@@ -23,8 +23,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="manifest.json">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="js/manifest.json">
   </head>
   <body>
     <div class="container">
@@ -122,11 +122,11 @@
         ></textarea> -->
       </div>
     </div>
-    <script src="scriptpage.js"></script>
+    <script src="js/scriptpage.js"></script>
 
     <script>
       if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
+  navigator.serviceWorker.register('js/service-worker.js')
     .then(registration => {
       console.log('Service Worker registered with scope:', registration.scope);
     })
