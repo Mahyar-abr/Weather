@@ -1,11 +1,11 @@
 @font-face {
   font-family: "body";
-  src: url(Font/BLUEHIGD.TTF);
+  src: url(/Font/BLUEHIGD.TTF);
 }
 
 @font-face {
   font-family: "head";
-  src: url(Font\MADE_TOMMY_Black_PERSONAL_USE.otf);
+  src: url(/Font/MADE_TOMMY_Black_PERSONAL_USE.otf);
 }
 
 :root {
