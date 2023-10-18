@@ -1,11 +1,11 @@
 @font-face {
   font-family: "body";
-  src: url(/Font/BLUEHIGD.TTF);
+  src: url(https://raw.githubusercontent.com/Mahyar-abr/Weather/master/BLUEHIGD.TTF);
 }
 
 @font-face {
   font-family: "head";
-  src: url(/Font/MADE\ TOMMY\ Black_PERSONAL\ USE.otf);
+  src: url(https://raw.githubusercontent.com/Mahyar-abr/Weather/master/BlackPersonal.otf);
 }
 
 :root {
@@ -69,6 +69,7 @@ body {
 
 .today,
 .day {
+  align-items: center;
   max-width: 900px;
   width: 95%;
   justify-content: left;
@@ -79,7 +80,7 @@ body {
   top: 50px;
 }
 
-.day {
+/* .day {
   position: relative;
   right: 13px;
 }
@@ -87,7 +88,7 @@ body {
 .today {
   position: relative;
   right: 5px;
-}
+} */
 
 .weather {
   max-width: 100%;
