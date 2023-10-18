@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Document</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/option.css" />
+    <link rel="stylesheet" href="css/textStyle.css" />
+    <link rel="stylesheet" href="inputButton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="jquery"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="manifest.json">
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="headTitle">Weather Forecast Application</h2>
+      <div class="chooseCountry">
+        <button class="button-66" role="button" id="chooseCountry">
+          <i class="fa fa-cog" aria-hidden="true" id="iconClick"></i>Choose Your Country
+        </button>
+      </div>
+
+      <div class="background">
+        <div class="top">
+          <p id="todayDate" class="today"></p>
+          <p id="weekDay" class="day"></p>
+          <p id="country" class="country"></p>
+          <p id="city" class="city"></p>
+          <p id="weather" class="weather"></p>
+          <p id="degree" class="degree"></p>
+          <div class="cards">
+            <div class="left">
+              <div class="cardelementposition">
+                <p>DAY</p>
+                <p id="degreeDay" class="forecast-text"></p>
+                <img alt="" id="degreeDayImage" />
+              </div>
+            </div>
+            <div class="middle">
+              <div class="cardelementposition">
+                <p>NIGHT</p>
+                <p id="degreeNight" class="forecast-text"></p>
+                <img id="degreeNightImage" alt="" />
+              </div>
+            </div>
+            <div class="right">
+              <div class="cardelementposition">
+                <p>TOMMOROW</p>
+                <p id="degreeTommorow" class="forecast-text"></p>
+                <img id="degreeTommorowImage" src="" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="todo">
+      <div class="popup-content" id="popupcontent">
+        <div class="select-box">
+          <label for="country" class="label select-box1"
+            ><span class="label-desc">Choose your country</span>
+          </label>
+          <select name="country" id="country" class="countryDropdown"></select>
+        </div>
+        <div class="select-box">
+          <label for="city" class="label select-box1" id="cityLabel"
+            ><span class="label-desc">Choose your city</span>
+          </label>
+          <select name="city" id="city" class="cityDropdown"></select>
+          <p class="not-found">
+            we couldn't find your city please write your city on the box below
+          </p>
+        </div>
+        <label for="searchCity" class="searchCityText" id="searchCitylabel"
+          ><p id="searchCitylabeltext" class="searchtext">
+            search your city if you couldn't found your city
+          </p></label
+        >
+        <!-- <input
+          id="searchCity"
+          type="search"
+          name="searchCity"
+          class="searchCity"
+          placeholder="Type Your City"
+        /> -->
+
+        <label for="inp" class="inp">
+          <input type="text" id="searchCity" placeholder="&nbsp;" class="searchCityLabelInput">
+          <span class="label-search searchCity">Type Your City</span>
+          <span class="focus-bg"></span>
+        </label>
+
+        <button class="button-save" id="save">Search</button>
+        <!-- <input
+          class="input"
+          type="text"
+          name="text"
+          id="task"
+          placeholder="Task"
+        />
+        <textarea
+          class="input"
+          name="text"
+          rows="4"
+          cols="50"
+          id="taskinfo"
+        ></textarea> -->
+      </div>
+    </div>
+    <script src="scriptpage.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.error('Error registering Service WorkerHi:', error);
+    });
+}
+    </script>
+  </body>
+</html>
