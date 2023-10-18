@@ -127,7 +127,7 @@
     <script src="js/scriptpage.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Weather/service-worker.js')
+  navigator.serviceWorker.register('/Weather/service-worker.js', { scope: '/Weather/' })
     .then(registration => {
       console.log('Service Worker registered with scope:', registration.scope);
     })
