@@ -127,9 +127,9 @@
     <script src="js/scriptpage.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://Mahyar-abr.github.io/Weather/service-worker.js')
+  navigator.serviceWorker.register('/mahyar-abr.github.io/Weather/service-worker.js')
     .then(registration => {
-      console.log('Service Worker registered with scope:', {scope: '/{Weather}/'});
+      console.log('Service Worker registered with scope:', registration.scope);
     })
     .catch(error => {
       console.error('Error registering Service WorkerHi:', error);
