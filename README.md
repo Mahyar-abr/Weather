@@ -1,5 +1,8 @@
 # Instructions
 If you are from iran use VPN in order to get the data.
+You can clone <code>gh repo clone Mahyar-abr/Weather</code> my project and run it on live server that way you can use PWA and also you can run it on your personal server!
+
+
 # Weather
 Introducing the ultimate weather companion: our web application that goes above and beyond to forecast weather conditions for every moment of your day! 
 Never step outside unprepared again as this innovative tool predicts the weather not only for now, but also for tomorrow, both day and night. 
