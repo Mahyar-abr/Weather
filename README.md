@@ -1,3 +1,5 @@
+#look
+![Clay-Mockup-Shot](https://github.com/Mahyar-abr/Weather/assets/135314778/aac109c5-3ce0-4a8e-b79f-c2f545cbb9b8)
 # Instructions
 If you are from iran use VPN in order to get the data.
 You can clone <code>gh repo clone Mahyar-abr/Weather</code> my project and run it on live server that way you can use PWA and also you can run it on your personal server!
